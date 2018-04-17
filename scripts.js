@@ -48,6 +48,12 @@ $(function() {
 	      this.$element.remove();
 	    }
 	};
+	function Card(description) {
+	var self = this;
+
+    this.id = randomString();
+    this.description = description;
+    this.$element = createCard();
 
 	function createCard() {
 	    // CREATING THE BLOCKS
@@ -65,6 +71,7 @@ $(function() {
 	    		.append($cardDescription);
 
 	    	return $card;
+	}
 	}
 	Card.prototype = {
 		removeCard: function() {
@@ -84,7 +91,7 @@ $(function() {
 	      connectWith: '.column-card-list',
 	      placeholder: 'card-placeholder'
 	    }).disableSelection();
-	  }
+	}
 	$('.create-column')
 	  .click(function(){
 		var name = prompt('Enter a column name');
